@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <select id="findById" resultType="com.example.demo.model.User">
+        select * from user where id = #{0}
+    </select>
+
+    <select id="searchList" parameterType="com.example.demo.model.UserSearchCondition" resultType="com.example.demo.model.User">
+        select * from user
+         <where> !deleted
+        <if test="searchText != null || searchText != ''">
+            and name like concat('%',#{searchText},'%')
+        </if>
+         </where>
+    </select>
+
+    <select id="searchCount" parameterType="com.example.demo.model.UserSearchCondition" resultType="java.lang.Integer">
+        select count(1) from user
+         <where> !deleted
+        <if test="searchText != null || searchText != ''">
+            and name like concat('%',#{searchText},'%')
+        </if>
+         </where>
+    </select>
+
+    <insert id="createByBo" parameterType="com.example.demo.model.User" keyProperty="id"
+            useGeneratedKeys="true">
+        INSERT INTO user(
+        name,
+        sex,
+        age,
+        comment,
+        deleted
+        )
+        VALUES (
+        #{name},
+        #{sex},
+        #{age},
+        #{comment},
+        false
+        )
+        <selectKey resultType="int" keyProperty="id">
+            SELECT @@IDENTITY AS id;
+        </selectKey>
+    </insert>
+    <update id="updateByBo" parameterType="com.example.demo.model.User">
+        UPDATE user
+        SET
+        name=#{name},
+        sex=#{sex},
+        age=#{age},
+        comment=#{comment},
+        deleted=#{deleted}
+        WHERE id = #{id}
+    </update>
+    <delete id="delete" parameterType="com.example.demo.model.User">
+        update user
+        set
+        deleted=true
+        where id = #{id}
+    </delete>
+</mapper>
