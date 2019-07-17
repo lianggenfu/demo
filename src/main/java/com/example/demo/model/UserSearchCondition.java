@@ -8,7 +8,7 @@ public class UserSearchCondition {
 
     private int limit;
 
-    private String searchText;
+    private String searchText="";
 
     public int getStart() {
         return start;

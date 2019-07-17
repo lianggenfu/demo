@@ -29,6 +29,8 @@
             useGeneratedKeys="true">
         INSERT INTO user(
         name,
+        account,
+        password,
         sex,
         age,
         comment,
@@ -36,6 +38,8 @@
         )
         VALUES (
         #{name},
+        #{account},
+        #{password},
         #{sex},
         #{age},
         #{comment},
@@ -49,6 +53,8 @@
         UPDATE user
         SET
         name=#{name},
+        account=#{account},
+        password=#{password},
         sex=#{sex},
         age=#{age},
         comment=#{comment},

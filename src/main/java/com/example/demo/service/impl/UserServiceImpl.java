@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Override
-    @Cacheable(value = "common")
+    //@Cacheable(value = "common")
     public User findById(int id) {
         return userMapper.findById(id);
     }

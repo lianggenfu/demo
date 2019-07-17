@@ -12,6 +12,12 @@ public class User implements Serializable {
     //用户名
     private String name;
 
+    //用户账户
+    private String account;
+
+    //用户密码
+    private String password;
+
     //性别
     private String sex;
 
@@ -72,11 +78,29 @@ public class User implements Serializable {
         this.deleted = deleted;
     }
 
+    public String getAccount() {
+        return account;
+    }
+
+    public void setAccount(String account) {
+        this.account = account;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", account='" + account + '\'' +
+                ", password='" + password + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 ", comment='" + comment + '\'' +
