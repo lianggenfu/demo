@@ -1,10 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 public class PageController {
@@ -22,6 +19,11 @@ public class PageController {
     @RequestMapping("/login")
     public String login(){
         return "login";
+    }
+
+    @RequestMapping("/register")
+    public String register(){
+        return "register";
     }
 
 }
