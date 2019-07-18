@@ -8,22 +8,22 @@
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
-    <title>用户登录</title>
+    <title>用户注册</title>
     <link rel="stylesheet" href="layui/css/layui.css">
 </head>
 
 <body style="background-image: url(img/bg1.jpg)">
         <fieldset class="layui-elem-field" style="width: 380px; margin:0 auto; margin-top: 10%; box-shadow: 0 0 10px #d9edf7;">
         <legend>
-            登录
+            用户注册
         </legend>
-        <form class="layui-form" action="/userlogin">
+        <form name="form" class="layui-form" action="/userregister" onsubmit='return checkForm()'>
             <div class="layui-form-item">
                 <label class="layui-form-label">
                     账号
                 </label>
                 <div class="layui-input-inline">
-                    <input type="text" name="username" required lay-verify="required" placeholder="请输入账号" autocomplete="off" class="layui-input">
+                    <input type="text" name="username" required lay-verify="required" placeholder="请输入账号" autocomplete="on" class="layui-input">
                 </div>
             </div>
 
@@ -33,6 +33,14 @@
                 </label>
                 <div class="layui-input-inline">
                     <input type="password" name="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    确认密码
+                </label>
+                <div class="layui-input-inline">
+                    <input type="password" name="checkpassword" required lay-verify="required" placeholder="请再次输入密码" autocomplete="off" class="layui-input">
                 </div>
             </div>
 
@@ -48,11 +56,21 @@
             </div>
         </form>
     </fieldset>
-        <label class="laydate-day-mark" style="position:absolute;left: 47%;margin-top: 0.625rem;">没有账号，立即<a style="color: red;" href="/register"><strong>注册</strong></a></label>
+        <label class="laydate-day-mark" style="position:absolute;left: 47%;margin-top: 0.625rem;">已有账号，立即<a style="color: red;" href="/login"><strong>登录</strong></a></label>
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript">
-
-        
+        function checkForm(){
+            //var username = document.form.username.value;
+            var password = document.form.password.value;
+            var checkpassword = document.form.checkpassword.value;
+            if(password.eq(checkpassword)){
+                return true;
+            }
+            else {
+                alert("两次输入密码不一致！");
+                return false;
+            }
+        }
 
     </script>
 </body>
