@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -13,6 +13,8 @@
 </head>
 
 <body style="background-image: url(img/bg1.jpg)">
+
+        <label th:text="${session.num}"></label>
         <fieldset class="layui-elem-field" style="width: 380px; margin:0 auto; margin-top: 10%; box-shadow: 0 0 10px #d9edf7;">
         <legend>
             登录
@@ -28,7 +30,7 @@
             </div>
 
             <div class="layui-form-item">
-                    <label class="layui-form-label">
+                <label class="layui-form-label">
                         密码
                 </label>
                 <div class="layui-input-inline">
@@ -51,8 +53,6 @@
         <label class="laydate-day-mark" style="position:absolute;left: 47%;margin-top: 0.625rem;">没有账号，立即<a style="color: red;" href="/register"><strong>注册</strong></a></label>
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript">
-
-        
 
     </script>
 </body>
