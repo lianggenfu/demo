@@ -31,7 +31,7 @@ public class RedisController {
             logger.info("用户【"+username+"】登录失败！");
         }
     }
-        @RequestMapping("/Logout")
+    @RequestMapping("/Logout")
     public void Logout( HttpServletRequest request) {
         logger.info("用户退出登录开始！");
         HttpSession session = request.getSession(false);//防止创建Session

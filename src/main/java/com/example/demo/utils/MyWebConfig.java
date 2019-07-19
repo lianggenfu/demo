@@ -12,7 +12,6 @@ public class MyWebConfig implements WebMvcConfigurer {
     public ServletListenerRegistrationBean listenerRegist() {
         ServletListenerRegistrationBean srb = new ServletListenerRegistrationBean();
         srb.setListener(new MyHttpSessionListener());
-        System.out.println("listener");
         return srb;
     }
 

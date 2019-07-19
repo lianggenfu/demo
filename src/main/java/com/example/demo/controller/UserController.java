@@ -5,9 +5,13 @@ import com.example.demo.model.UserSearchCondition;
 import com.example.demo.service.UserService;
 import com.example.demo.utils.ErrorException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -22,7 +26,7 @@ public class UserController {
     }
 
     @RequestMapping("/userlogin")
-    public String userlogin(String username,String password){
+    public String userlogin(String username, String password,HttpServletRequest request){
         User user = new User();
         user.setAccount(username);
         user.setPassword(password);
@@ -32,11 +36,22 @@ public class UserController {
         for(User userDb : users){
             if(userDb.getAccount().equals(username)) {
                 if (userDb.getPassword().equals(password)) {
+                    request.getSession().setAttribute("username",username);
                     return "index";
                 }
             }
         }
         return "loginfaild";
+    }
+
+    @RequestMapping("/userlogout")
+    public String userlogout(HttpServletRequest request){
+        HttpSession session = request.getSession(false);
+        if(session!=null){
+            session.removeAttribute("username");
+            session.invalidate();
+        }
+        return "login";
     }
 
     //userregister
