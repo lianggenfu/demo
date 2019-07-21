@@ -6,6 +6,7 @@ import com.example.demo.service.UserService;
 import com.example.demo.utils.ErrorException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.server.Session;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +20,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-
-    @RequestMapping("/findById")
-    public String findById(){
-        return userService.findById(1).toString();
-    }
 
     @RequestMapping("/userlogin")
     public String userlogin(String username, String password,HttpServletRequest request){

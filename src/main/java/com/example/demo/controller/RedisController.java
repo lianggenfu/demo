@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.service.UserService;
 import com.example.demo.utils.MyHttpSessionListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpSession;
 public class RedisController {
     private static Logger logger = LoggerFactory.getLogger(RedisController.class);
 
+    private UserService userService;
+
     @RequestMapping("redis")
     public String redis(){
         RedisTemplate redisTemplate = new RedisTemplate();
@@ -21,16 +24,21 @@ public class RedisController {
         return redisTemplate.opsForValue().get("num").toString();
     }
 
-    @RequestMapping("/login2")
-    public void getUserByUserNameAndPassword(String username, String password, HttpSession session) {
-        logger.info("用户【"+username+"】登陆开始！");
-        if("admin".equals(username) && "123456".equals(password)){
-            session.setAttribute("loginName",username);
-            logger.info("用户【"+username+"】登陆成功！");
-        }else{
-            logger.info("用户【"+username+"】登录失败！");
-        }
+    @RequestMapping("/findById")
+    public String findById(){
+        return userService.findById(1).toString();
     }
+
+    @RequestMapping("/findUser")
+    public String findUser(){
+        return userService.findById(1).toString();
+    }
+
+    @RequestMapping("/findTest")
+    public String findTest(){
+        return "test";
+    }
+
     @RequestMapping("/Logout")
     public void Logout( HttpServletRequest request) {
         logger.info("用户退出登录开始！");

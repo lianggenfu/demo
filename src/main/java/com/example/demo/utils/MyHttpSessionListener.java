@@ -1,8 +1,10 @@
 package com.example.demo.utils;
 
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
+@WebListener
 public class MyHttpSessionListener implements HttpSessionListener {
 
     public static int online = 0;
