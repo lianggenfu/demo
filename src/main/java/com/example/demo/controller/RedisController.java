@@ -55,4 +55,14 @@ public class RedisController {
     public Object online() {
         return  "当前在线人数：" + MyHttpSessionListener.online + "人";
     }
+
+    @RequestMapping("/online2")
+    public Object online2() {
+        return  "当前在线人数：" + MyHttpSessionListener.online + "人";
+    }
+
+    @RequestMapping("/online3")
+    public Object online3() {
+        return  "当前在线人数：" + MyHttpSessionListener.online + "人";
+    }
 }

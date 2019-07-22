@@ -66,6 +66,7 @@ public class UserController {
             }
         }
         userService.createByBo(user);
-        return "login";
+        //return "login";
+        return "index";
     }
 }
