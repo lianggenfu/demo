@@ -21,10 +21,6 @@ public class PageController {
     public String login(){
         return "login";
     }
-    @RequestMapping("/login2")
-    public String login2(){
-        return "login2";
-    }
 
 
     @RequestMapping("/register")

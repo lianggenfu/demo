@@ -3,11 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.User;
 import com.example.demo.model.UserSearchCondition;
 import com.example.demo.service.UserService;
-import com.example.demo.utils.ErrorException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.server.Session;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -67,6 +63,6 @@ public class UserController {
         }
         userService.createByBo(user);
         //return "login";
-        return "index";
+        return "index1";
     }
 }
