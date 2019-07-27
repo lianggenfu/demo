@@ -17,7 +17,7 @@
         <legend>
             用户注册
         </legend>
-        <form name="form" class="layui-form" action="/userregister" onsubmit='return checkForm()'>
+        <form id="loginForm" name="form" class="layui-form" action="/register" onsubmit="return checkForm()">
             <div class="layui-form-item">
                 <label class="layui-form-label">
                     账号
@@ -46,7 +46,7 @@
 
             <div class="layui-form-item">
                 <div class="layui-input-block">
-                    <button class="layui-btn" lay-submit lay-filter="signin">
+                    <button class="layui-btn" lay-submit lay-filter="signin" onclick="login()">
                         立即提交
                     </button>
                     <button type="reset" class="layui-btn layui-btn-primary">
@@ -60,18 +60,16 @@
     <script type="text/javascript" src="layui/layui.js"></script>
     <script type="text/javascript">
         function checkForm(){
-            //var username = document.form.username.value;
             var password = document.form.password.value;
             var checkpassword = document.form.checkpassword.value;
-            if(password.eq(checkpassword)){
-                return true;
-            }
-            else {
+            if (password!=checkpassword) {
                 alert("两次输入密码不一致！");
                 return false;
+            }else{
+                //alert("成功登录");
+                return true;
             }
         }
-
     </script>
 </body>
 </html>
