@@ -6,13 +6,10 @@ import com.example.demo.model.UserSearchCondition;
 import com.example.demo.service.UserService;
 import com.example.demo.utils.ErrorException;
 import com.example.demo.utils.Page;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import javax.annotation.Resource;
 
 @Service
 public class UserServiceImpl implements UserService {
