@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.model.User;
 import com.example.demo.model.UserSearchCondition;
@@ -7,7 +8,6 @@ import com.example.demo.service.UserService;
 import com.example.demo.utils.ErrorException;
 import com.example.demo.utils.Page;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 
