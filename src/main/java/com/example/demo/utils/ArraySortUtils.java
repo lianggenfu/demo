@@ -3,7 +3,7 @@ package com.example.demo.utils;
 public class ArraySortUtils {
 
     public static void main(String[] args) {
-        int[] arr = {4,3,12,6,7};
+        int[] arr = {4,3,12,6,7,5,3,2,4,1};
         System.out.println("排序前：");
         display(arr);
         System.out.println("冒泡排序后：");
