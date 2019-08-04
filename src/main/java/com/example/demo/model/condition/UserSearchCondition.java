@@ -1,8 +1,9 @@
-package com.example.demo.model;
+package com.example.demo.model.condition;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class UserSearchCondition {
+public class UserSearchCondition implements Serializable {
 
     private int start;
 

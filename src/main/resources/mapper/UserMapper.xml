@@ -7,7 +7,7 @@
         select * from user where id = #{0}
     </select>
 
-    <select id="searchList" parameterType="com.example.demo.model.UserSearchCondition" resultType="com.example.demo.model.User">
+    <select id="searchList" parameterType="com.example.demo.model.condition.UserSearchCondition" resultType="com.example.demo.model.User">
         select * from user
          <where> !deleted
         <if test="searchText != null || searchText != ''">
@@ -16,7 +16,7 @@
          </where>
     </select>
 
-    <select id="searchCount" parameterType="com.example.demo.model.UserSearchCondition" resultType="java.lang.Integer">
+    <select id="searchCount" parameterType="com.example.demo.model.condition.UserSearchCondition" resultType="java.lang.Integer">
         select count(1) from user
          <where> !deleted
         <if test="searchText != null || searchText != ''">

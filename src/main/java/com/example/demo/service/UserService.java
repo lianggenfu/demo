@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.User;
-import com.example.demo.model.UserSearchCondition;
+import com.example.demo.model.condition.UserSearchCondition;
 import com.example.demo.utils.Page;
 
 

@@ -2,12 +2,9 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class User extends BaseMoedel {
 
     private static final long serialVersionUID = -609314963925055048L;
-
-    //用户id
-    private int id;
 
     //用户名
     private String name;
@@ -29,14 +26,6 @@ public class User implements Serializable {
 
     //是否删除
     private Boolean deleted;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -97,8 +86,7 @@ public class User implements Serializable {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", account='" + account + '\'' +
                 ", password='" + password + '\'' +
                 ", sex='" + sex + '\'' +
