@@ -8,7 +8,7 @@ import org.springframework.cache.annotation.EnableCaching;
 
 @SpringBootApplication
 @MapperScan(value = "com.example.*.mapper")
-@EnableCaching
+//@EnableCaching
 @ServletComponentScan
 public class DemoApplication {
 
