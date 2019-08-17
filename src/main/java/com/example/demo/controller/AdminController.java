@@ -10,4 +10,9 @@ public class AdminController {
     public String adminLogin(){
         return "adminLogin";
     }
+
+    @RequestMapping("/addToGithub")
+    public String addToGithub(){
+        return "saddsdsfsd";
+    }
 }
